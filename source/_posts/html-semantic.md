@@ -11,7 +11,7 @@ tags:
   * [掘金](https://juejin.im/)前端页面就大量使用了语义化标签。
   * [Element组件](https://element.eleme.cn/#/zh-CN/component/container)也封装了一些语义化的组件。
 
-## 示例图
+### 示例图
   ![](/medias/html-semantic/1.jpg)
 ### HTML5新增的语义化标签
 
