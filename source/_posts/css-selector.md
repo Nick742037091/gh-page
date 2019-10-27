@@ -220,3 +220,6 @@ input[type="email"]:invalid{
   color: red;
 }
 ```
+
+#### 层叠优先级
+> important > 行内样式 > ID选择器 > 类、伪类和属性选择器 > 元素选择器和微元素选择器
