@@ -10,6 +10,8 @@ tags:
 
 本文主要介绍 css 盒模型的一些相关属性。
 
+<!-- more -->
+
 ### width 和 height
 
 - 默认情况下，元素盒子的 width 和 heigh 指的是内容盒子，也就是可渲染区域的宽度和高度。此时添加边框和内边距不会影响内容盒子的大小，但是会导致整个元素盒子扩大，要注意此时若想元素盒子的宽高和添加边框和内边距之前一致，要通过 width 和 height 的值来实现。
@@ -105,4 +107,41 @@ tags:
   2. 设置 float 不为 none
   3. 设置为绝对定位
   4. 设置 overflow 不为 visible
-- 同时设置为块级作用域，可以不使用浮动清除实现浮动元素自动撑开父元素的效果和使紧挨浮动元素的文本不延伸到浮动元素下面的效果。
+- 设置为块级作用域，可以不使用浮动清除实现浮动元素自动撑开父元素的效果和使紧挨浮动元素的文本不延伸到浮动元素下面的效果。
+
+  ```html
+  <template>
+    <div id="app">
+      <div class="top-block">
+        <div class="float-block"></div>
+        <div class="text-block">xxxxx xxxxx xxxxx xxxxx</div>
+      </div>
+
+      <div class="bottom-block"></div>
+    </div>
+  </template>
+
+  <style>
+    #app {
+      width: 400px;
+    }
+    .top-block {
+      overflow: auto;
+    }
+    .float-block {
+      float: left;
+      width: 300px;
+      height: 50px;
+      background-color: red;
+    }
+    .text-block {
+      overflow: auto;
+    }
+
+    .bottom-block {
+      width: 300px;
+      height: 100px;
+      background-color: green;
+    }
+  </style>
+  ```
