@@ -99,4 +99,47 @@ tags:
   图 2
   ![](/medias/css-box-style/2.png)
 
+- background-clip
+  ```css
+  .box {
+    /* 背景颜色和背景图的渲染区域，可选值为border-box（默认值，渲染到边框）、
+    padding-box(渲染到内边距)和content-box（渲染到内容区域）。 */
+    background-clip: padding-box;
+  }
+  ```
+- background-origin
+  ```css
+  .box {
+    /* 背景图的渲染起始点，可选值为padding-box(默认值，内边距区域的左上角) 、
+    border-box（边框区域的左上角）、和content-box（内容区域左上角）。
+    背景颜色默认渲染起点是border-box，不可修改。 */
+    background-origin: content-box;
+  }
+  ```
+- background-attachment
+  ```css
+  .box {
+    /* 背景图附着模式，可选择为scroll（默认）、fixed和local。 
+    scroll指随着盒子父元素的滚动而滚动；fixed指随着盒子父元素的规则，
+    背景图相对于视窗的位置不移动，原来位于盒子下面的元素会覆盖在背景图之上；
+    local指当盒子本身是可滚动区域时，背景图会随局部区域滚动(默认是不移动的)。 */
+    background-attachment: fixed;
+  }
+  ```  
+
+- background-size
+  ```css
+  .box {
+    /* 指定背景图的大小，可设置为像素、百分比、auto和关键字。
+    像素是固定大小，大于盒子尺寸会被裁剪。百分比是指相对于盒子的长宽，
+    一般情况下是一边设置为百分比，一边设置为auto， 以保持原始长宽比。
+    关键字有contain和cover，contain是指在保持宽高比的同时，尽可能
+    显示整张图片，相当于短边设置100%，长边设置auto; contain是指在
+    保持宽高比的同时，尽可能铺满盒子，相当于长边设置100%，短边设置auto; */
+    background-size: 200px 300px;
+    /* 保持宽高比，宽度占盒子80%。 */
+    background-size: 80% auto;
+  }
+  ```  
+
 ### 未完待续...
