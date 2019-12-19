@@ -61,3 +61,31 @@ tags:
   align-self: flex-start;
 ```
 
+## 可伸缩的尺寸
+根据flex-basis 、flex-grow和flex-shrink伸缩子项尺寸的步骤如下：
+1. 根据flex-basis分配基本尺寸。
+2. 若1分配后有剩余空间，根据flex-grow的比例将剩余空间分配给子项。
+3. 若1分配后子项尺寸超出容器尺寸。根据flex-shrink和flex-basis乘积的比例，
+   将超出尺寸进行划分，得出各子项需要收缩的尺寸。
+
+```css
+  /* 默认值，表示若有设置尺寸，取该尺寸的值，若没有，则根据内容大小确定尺寸 */
+  flex-basis: auto;
+  /* 固定尺寸 */
+  flex-basis: 100px;
+  /* 相对容器主轴的百分比尺寸 */
+  flex-basis: 30%;
+```
+
+```css
+  /* 延伸比例 */
+  flex-grow: 1;
+  /* 收缩比例 */
+  flex-shrink:1;
+  /* 一次性设置flex-grow,flex-shrink和flex-basis */
+  flex: 1 1 100px;
+  /* 只设置flex-grow, 相当于flex:1 0 0px。
+    完全根据flex-grow分配尺寸，是最常用的用法。 */
+  flex:1;
+```
+
