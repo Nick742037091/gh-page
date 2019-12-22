@@ -89,3 +89,19 @@ tags:
   flex:1;
 ```
 
+## 多行排布
+```css
+  /* 超过容器宽度，自动换行排布*/
+  flex-wrap: wrap;
+  /* 与wrap类型，但是从下往上排序*/
+  flex-wrap: wrap-reverse;
+  /* 多行排布时，若容器高度固定，默认将容器高度平均分配给每一行。
+    align-items作用于每一行，用法相同。
+    justify-content作用于每一行，用法相同。
+    align-content会取消高度的平均分配，相当于将所有子项看作整体，
+    在垂直方向上进行排布。 */
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+```
+
