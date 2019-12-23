@@ -1,5 +1,5 @@
 ---
-title: js执行环节和作用域
+title: js执行环境和作用域
 date: 2019-12-23 23:24:25
 categories:
   - 前端
