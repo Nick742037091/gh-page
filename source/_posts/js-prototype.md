@@ -29,7 +29,7 @@ function Person(name) {
 Person.prototype.name = 'nick'
 Person.prototype.sex = 0
 Person.prototype.age = 29
-Person.prototype.showName = function() {
+Person.prototype.showName = function () {
   console.log(this.name)
 }
 var nick = new Person()
@@ -73,9 +73,9 @@ function Person(name, sex, age) {
 Person.prototype = {
   constructor: Person,
   // 原型属性
-  showName: function() {
+  showName: function () {
     console.log(this.name)
-  }
+  },
 }
 ```
 
@@ -91,7 +91,7 @@ function SuperType(name) {
   this.colors = ['red', 'green']
 }
 
-SuperType.prototype.showName = function() {
+SuperType.prototype.showName = function () {
   console.log(this.name)
 }
 
@@ -104,7 +104,8 @@ function SubType(name, age) {
 }
 
 function inheritPrototype(SubType, SuperType) {
-  // 增加一层原型，避免调用父类构造函数导致多余的父类属性，同时也能继承父类原型中的属性
+  // 创建新的构造函数，构造函数内容为空，复用父类的原型，
+  // 从而避免调用父类构造函数导致多余的父类属性，同时也能继承父类原型中的属性
   function F() {}
   F.prototype = SuperType.prototype
   var obj = new F()
@@ -116,7 +117,7 @@ function inheritPrototype(SubType, SuperType) {
 // 继承父类原型属性
 inheritPrototype(SubType, SuperType)
 
-SubType.prototype.showAge = function() {
+SubType.prototype.showAge = function () {
   console.log(this.age)
 }
 var sup = new SuperType('sup')
