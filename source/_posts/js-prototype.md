@@ -104,14 +104,25 @@ function SubType(name, age) {
 }
 
 function inheritPrototype(SubType, SuperType) {
-  // 创建新的构造函数，构造函数内容为空，复用父类的原型，
+  // 寄生式继承：
+  // 创建空对象，复用父类的原型，以此对象作为子类原型。
   // 从而避免调用父类构造函数导致多余的父类属性，同时也能继承父类原型中的属性
+  // 方式1
   function F() {}
   F.prototype = SuperType.prototype
   var obj = new F()
   // 设置子类原型的构造器
   obj.constructor = SubType
   SubType.prototype = obj
+  // 方式2
+  // SubType.prototype = Object.create(SuperType && SuperType.prototype, {
+  //   constructor: {
+  //     value: SubType,
+  //     enumerable: false,
+  //     writable: true,
+  //     configurable: true,
+  //   },
+  // })
 }
 
 // 继承父类原型属性
